@@ -13,7 +13,8 @@ import { CustomerComponent } from './dashboard/customer/customer.component';
 import { Ng2OrderModule} from 'ng2-order-pipe';
 import { RestaurantModule } from './restaurant/restaurant.module';
 import { CommonModule } from '@angular/common';
-import { CartComponent } from './order/cart/cart.component';
+//import { CartComponent } from './order/cart/cart.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,8 +24,8 @@ import { CartComponent } from './order/cart/cart.component';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    CustomerComponent,
-    CartComponent
+    CustomerComponent
+   // CartComponent
     
   ],
   imports: [
@@ -38,8 +39,8 @@ import { CartComponent } from './order/cart/cart.component';
     Ng2OrderModule,
     RestaurantModule,
     CommonModule,
-    
   ],
+  exports:[AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

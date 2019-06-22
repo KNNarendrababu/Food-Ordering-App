@@ -83,9 +83,16 @@ export class SignupComponent implements OnInit {
     })
     
   }
-  onSubmit(){
-    alert("Registration Successfull !!");
+  
+  onSubmit(regForm:FormGroup){
+    let emailInput = regForm.get('contactDetails').get('email').value;
+    let passwordInput = regForm.get('password').value;
     
+    // this.obj.emailElement.push(emailInput);
+    // this.obj.passwordElement.push(passwordInput);
+    localStorage.setItem('email', emailInput);
+    localStorage.setItem('password', passwordInput);
+    alert("Registration Successfull !!");
   }
 }
 

@@ -34,8 +34,18 @@ export class LoginComponent implements OnInit {
    }
 
    onSubmit(lform:FormGroup){
-     //console.log("email:", this.user.email);
-     alert("Login Successfull !!");
+    this.email1=localStorage.getItem('email');
+    this.password1=localStorage.getItem('password');
+    console.log("password",this.password1);
+
+     //console.log("email:", this.loginForm.get('email').value);
+    if(lform.get('email').value == this.email1 && lform.get('password').value == this.password1){
+      alert("Login Successfull !!");
      this.router.navigate(['/customer']); 
+    }else{
+      alert("You are not the user of this website. Please Register first")
+    }
+     
    }
+
 }
